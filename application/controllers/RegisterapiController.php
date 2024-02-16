@@ -181,6 +181,7 @@ class RegisterapiController extends RestController
         'status'=> false,
         'message'=> 'Data is not Updated.'
       ],RestController::HTTP_BAD_REQUEST);
+      
      }
   }
 
