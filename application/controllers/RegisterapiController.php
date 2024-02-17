@@ -25,7 +25,7 @@ class RegisterapiController extends RestController
             $this->response([
                 'status' => false,
                 'message' => 'No data found',
-                'data' => [],
+                'data' => []
             ], 404);
         }
         else
