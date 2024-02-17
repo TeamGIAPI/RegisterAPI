@@ -151,7 +151,8 @@ class RegisterapiController extends RestController
     public function update_put($id) 
     {
     $register = new RegisterapiModel();
-    $data = [                                  
+    $data = 
+    [                                  
       'fname' => $this->put('fname'),
       'lname' => $this->put('lname'),
       'dob' => $this->put('dob'),
