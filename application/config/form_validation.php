@@ -33,10 +33,19 @@
                 ),
             ),
 
+            // array(
+            //     'field' => 'dob',
+            //     'label' => 'Address',
+            //     'rules' => 'required|trim',
+            //     'errors' => array(
+            //             'required' => '%s is required.'
+            //     ),
+            // ),
+
             array(
-                'field' => 'addres',
-                'label' => 'Address',
-                'rules' => 'required|trim',
+                'field' => 'dob',
+                'label' => 'Date Of Birth',
+                'rules' => 'required',
                 'errors' => array(
                         'required' => '%s is required.'
                 ),
@@ -52,8 +61,8 @@
             ),
 
             array(
-                'field' => 'dob',
-                'label' => 'Date Of Birth',
+                'field' => 'country',
+                'label' => 'Select country',
                 'rules' => 'required',
                 'errors' => array(
                         'required' => '%s is required.'
@@ -61,13 +70,11 @@
             ),
 
             array(
-                'field' => 'pnumber',
-                'label' => 'Contact number',
-                'rules' => 'required|trim|numeric|max_length[10]',
+                'field' => 'state',
+                'label' => 'Select state',
+                'rules' => 'required',
                 'errors' => array(
-                        'required' => '%s is required.',
-                        'numeric' => 'Only numbers are allowed.',
-                        'max_length' => 'Only 10 numbers are allowed.'
+                        'required' => '%s is required.'
                 ),
             ),
 
@@ -79,20 +86,33 @@
                         'required' => '%s is required.'
                 ),
             ),
-
+        
             array(
-                'field' => 'uname',
-                'label' => 'User name',
-                'rules' => 'required|trim|alpha_dash|is_unique[register.uname]',
+                'field' => 'contact',
+                'label' => 'Contact number',
+                'rules' => 'required|trim|numeric|max_length[10]',
                 'errors' => array(
                         'required' => '%s is required.',
-                        'alpha_dash' => 'Only letters, numbers and dashes are allowed.',
-                        'is_unique' => '%s already exists.'
+                        'numeric' => 'Only numbers are allowed.',
+                        'max_length' => 'Only 10 numbers are allowed.'
                 ),
             ),
 
+            
+
+            // array(
+            //     'field' => 'uname',
+            //     'label' => 'User name',
+            //     'rules' => 'required|trim|alpha_dash|is_unique[register.uname]',
+            //     'errors' => array(
+            //             'required' => '%s is required.',
+            //             'alpha_dash' => 'Only letters, numbers and dashes are allowed.',
+            //             'is_unique' => '%s already exists.'
+            //     ),
+            // ),
+
             array(
-                'field' => 'pass',
+                'field' => 'password',
                 'label' => 'Password',
                 'rules' => 'required|trim|min_length[8]|max_length[15]',
                 'errors' => array(
@@ -102,17 +122,17 @@
                 ),
             ),
 
-            array(
-                'field' => 'cpass',
-                'label' => 'Confirm Password',
-                'rules' => 'required|trim|min_length[8]|max_length[15]|matches[pass]',
-                'errors' => array(
-                        'required' => '%s is required.',
-                        'min_length' => 'Password must be at least 8 characters long.',
-                        'max_length' => 'Password must be at most 15 characters long.',
-                        'matches' => 'Passwords do not match.'
-                ),
-            )
+            // array(
+            //     'field' => 'cpass',
+            //     'label' => 'Confirm Password',
+            //     'rules' => 'required|trim|min_length[8]|max_length[15]|matches[pass]',
+            //     'errors' => array(
+            //             'required' => '%s is required.',
+            //             'min_length' => 'Password must be at least 8 characters long.',
+            //             'max_length' => 'Password must be at most 15 characters long.',
+            //             'matches' => 'Passwords do not match.'
+            //     ),
+            // )
         ),
 
     'signin' => array (

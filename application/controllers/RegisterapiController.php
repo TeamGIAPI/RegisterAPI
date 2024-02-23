@@ -117,18 +117,25 @@ class RegisterapiController extends RestController
     public function insert_post()
     {
         $model = new RegisterapiModel();
-        $data = $this->input->post();
-        $fname = $data['fname'];
-        $lname = $data['lname'];
-        $data['uname']=$fname.$lname;
-        $result = $model->insert($data);
-        if($result == 1)
+        if($this->form_validation->run('register'))
         {
-            $this->response(['status' => true,'message' => 'inserted successfully'], RestController::HTTP_OK);
+            $data = $this->input->post();
+            $fname = $data['fname'];
+            $lname = $data['lname'];
+            $data['uname']=$fname.$lname;
+            $result = $model->insert($data);
+            if($result == 1)
+            {
+                $this->response(['status' => true,'message' => 'inserted successfully'], RestController::HTTP_OK);
+            }
+            else
+            {
+                $this->response(['status' => false,'message' => 'insertion failed'], RestController::HTTP_BAD_REQUEST);
+            }
         }
         else
         {
-            $this->response(['status' => false,'message' => 'insertion failed'], RestController::HTTP_BAD_REQUEST);
+            $this->response(['status' => false,'message' => validation_errors()], RestController::HTTP_BAD_REQUEST);
         }
     }
 
